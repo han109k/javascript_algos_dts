@@ -25,7 +25,7 @@ function sortOpt(arr) {
         let temp = arr[j];
         arr[j] = arr[j+1];
         arr[j+1] = temp;
-        false;
+        noSwaps = false;
       }
     }
     if(noSwaps) break;
@@ -36,3 +36,5 @@ function sortOpt(arr) {
 
 console.log(sort([5,3,6,2,10,4,1]));
 console.log(sort([37,45,29,8]));
+console.log(sortOpt([5,3,6,2,10,4,1]));
+console.log(sortOpt([37,45,29,8]));
