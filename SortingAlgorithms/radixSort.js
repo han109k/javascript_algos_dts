@@ -115,6 +115,7 @@ function sortRef(arr) {
       let digit = getDigit(arr[j], i);
       buckets[digit].push(arr[j]);
     }
+    // spread
     arr = [].concat(...buckets);
   }
   return arr;
