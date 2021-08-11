@@ -144,7 +144,6 @@ class SingleLinkedList {
       process.stdout.write("Head -> " + curr.val);
       while (curr.next != null) {
         curr = curr.next;
-        // console.log(curr.val);
         process.stdout.write(" " + curr.val);
       }
       process.stdout.write(" <- Tail\n");
