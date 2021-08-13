@@ -51,15 +51,17 @@ class Queue{
   }
 }
 
+module.exports = Queue;
+
 /**
  ** TESTING
  */
-let queue = new Queue();
-queue.enqueue(5);
-queue.enqueue(2);
-queue.print();
+// let queue = new Queue();
+// queue.enqueue(5);
+// queue.enqueue(2);
+// queue.print();
 
-queue.dequeue();
-queue.dequeue();
-queue.dequeue();
-queue.print();
+// queue.dequeue();
+// queue.dequeue();
+// queue.dequeue();
+// queue.print();
