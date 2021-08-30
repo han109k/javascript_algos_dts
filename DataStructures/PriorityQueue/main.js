@@ -11,9 +11,21 @@ class PriorityQueue {
     this.values = [];
   }
 
+  
   enqueue(val, priority) {
+    
+    /*
+    * If there will be a duplicate first remove it current node
+    * after that add a new node and push it to the list. Lastly, re-bubble up
+    */ 
+    // this.values.map((node, index) => {
+    //   if(node.val === val) {
+    //     this.values.splice(index, 1);
+    //   }
+    // })
+    
     let node = new Node(val, priority);
-    this.values.push(node);
+    this.values.push(node);    
 
     function bubbleUp(values) {
       let index = values.length - 1;
@@ -41,15 +53,41 @@ class PriorityQueue {
     for(let values of this.values) {
       console.log(values.val + " Priority : " + values.priority);
     }
+    console.log();
   }
 }
 
-let pQueue = new PriorityQueue();
-pQueue.enqueue("Headache", 5);
-pQueue.enqueue("Concussion", 1);
-pQueue.enqueue("Fever", 3);
-pQueue.enqueue("Flu", 2);
-pQueue.print();
+module.exports = PriorityQueue;
 
-console.log(pQueue.dequeue());
-pQueue.print();
+/**
+ ** TESTING
+ */
+
+// let pQueue = new PriorityQueue();
+// pQueue.enqueue("Headache", 5);
+// pQueue.enqueue("Concussion", 1);
+// pQueue.enqueue("Fever", 3);
+// pQueue.enqueue("Flu", 2);
+// pQueue.print();
+
+// console.log(pQueue.dequeue());
+// pQueue.print();
+
+// let pQueue = new PriorityQueue();
+// pQueue.enqueue("B", 95);
+// pQueue.enqueue("C", 96);
+// pQueue.enqueue("D", 97);
+// pQueue.enqueue("E", 98);
+// pQueue.enqueue("F", 99);
+// pQueue.print();
+
+// pQueue.enqueue("B", 2);
+// pQueue.print();
+// pQueue.enqueue("C", 4);
+// pQueue.print();
+// pQueue.enqueue("D", 3);
+// pQueue.print();
+// pQueue.enqueue("E", 5);
+// pQueue.print();
+// pQueue.enqueue("F", 9);
+// pQueue.print();

@@ -1,5 +1,5 @@
 /**
- * Undirected Graph
+ * Undirected Unweighted Graph
  */
 class Graph {
   constructor() {
