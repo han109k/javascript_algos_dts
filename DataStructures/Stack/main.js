@@ -51,18 +51,20 @@ class Stack{
   }
 }
 
+module.exports = Stack;
+
 /**
  ** TESTING
  */
 
-let stack = new Stack();
-// push
-stack.push(5);
-stack.push(3);
-stack.push(2);
-stack.print();
+// let stack = new Stack();
+// // push
+// stack.push(5);
+// stack.push(3);
+// stack.push(2);
+// stack.print();
 
-// pop
-stack.pop();
-stack.pop();
-stack.print();
+// // pop
+// stack.pop();
+// stack.pop();
+// stack.print();
