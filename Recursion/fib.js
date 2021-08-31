@@ -6,6 +6,9 @@
  * thereafter is equal to the sum of the previous two numbers.
  */
 
+/**
+ * Time Complexity O (N)
+ */
 function fibIter(num) {
 
   if(num === 0) return undefined;
@@ -22,6 +25,9 @@ function fibIter(num) {
   return fib;
 }
 
+/**
+ * Time Complexity O (2^N)
+ */
 function fib(num) {
   if(num <= 2) return 1;
   return fib(num-1) + fib(num-2);
