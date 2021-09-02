@@ -63,12 +63,12 @@ function shortestPath(start, end) {
   while (queue.values.length != 0 && !found) {
     let vertex = queue.dequeue();
     if (!(vertex === end)) {
-      graph.adjacencyList[vertex].forEach(element => {
-        if (!visited[element.vertex]) {
-          let currVertex = element.vertex;
+      graph.adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor.vertex]) {
+          let currVertex = neighbor.vertex;
 
           // calculate distance from start for current neighbor
-          let dstStart = element.weight;
+          let dstStart = neighbor.weight;
           dstStart += distances[vertex];
 
           if (dstStart < distances[currVertex]) {

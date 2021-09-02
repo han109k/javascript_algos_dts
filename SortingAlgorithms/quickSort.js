@@ -14,7 +14,7 @@ function pivot(arr, start, end) {
   return swapIndex;
 }
 
-// console.log(pivot([7,2,4,1,5]));
+// console.log(pivot([2,4,7,1,5,8], 0, 6));
 // console.log(pivot([4, 2, 7, 10]));
 // console.log(pivot([4, 3, 6, 2, 10]));
 
@@ -22,12 +22,12 @@ function pivot(arr, start, end) {
  * ! In JavaScript, all objects interact by reference
  * ! This includes Arrays, String object
  * Time Complexity Worst case: O(n^2) - Average: O(n*logn)
- * To optimize algo pivot should be selected randomly
+ * To optimize algo, pivot should be selected randomly
  * instead of selecting the first index
  * SpaceComplexity O(logn)
- * @param {*} arr 
- * @param {*} left 
- * @param {*} right 
+ * @param {Array} arr 
+ * @param {number} left 
+ * @param {number} right 
  * @returns 
  */
 function sort(arr, left = 0, right = arr.length) {

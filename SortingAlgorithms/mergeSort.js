@@ -35,7 +35,7 @@ function merge(arr1, arr2) {
   return mArr;
 }
 
-// Time complexity O(n.logn)
+// Time complexity O(n*logn)
 // Space complexity O(n)
 function sort(arr) {
 

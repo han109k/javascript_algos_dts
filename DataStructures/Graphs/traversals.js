@@ -31,16 +31,17 @@ function depthFirstIterative(node) {
   const list = [];
   const visited = {};
 
-  stack.push(node);
+  stack.push(node); visited[node] = true;
   while(stack.size != 0) {
     let vertex = stack.pop().val;
-    if(!visited[vertex]) {
-      visited[vertex] = true;
-      list.push(vertex);
-      g.adjacencyList[vertex].forEach(neighbor => {
+    list.push(vertex);
+    
+    g.adjacencyList[vertex].forEach(neighbor => {
+      if(!visited[neighbor]) {
+        visited[neighbor] = true;
         stack.push(neighbor);
-      });
-    }
+      }
+    });
   }
 
   return list;
