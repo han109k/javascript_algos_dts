@@ -120,6 +120,27 @@ class SingleLinkedList {
     return del;
   }
 
+  //* Rotate - rotates the list by some number
+  rotate(delimiter) {
+    delimiter = delimiter % this.length;
+    if(delimiter < 0) {
+      delimiter = this.length + delimiter;
+    }
+    
+    if(delimiter !== 0) {  
+      let prev = this.head;
+      for(let i = 0; i < delimiter - 1; i++) {
+        prev = prev.next;
+      }
+      this.tail.next = this.head;
+      this.head = this.get(delimiter);
+      this.tail = this.get(this.length-1);
+      prev.next = null;
+    }
+
+    return this;
+  }
+
   //* Reverse - reverse list items
   reverse() {
     let curr = this.head;
@@ -157,53 +178,56 @@ class SingleLinkedList {
 
 let list = new SingleLinkedList();
 list.push(5);
-console.log(list);
 list.push(4);
 list.push(2);
 list.push(7);
-console.log(list.print());
-
-console.log("pop: ", list.pop());
-console.log(list.print());
-
-console.log("shift: ", list.shift());
-console.log("shift: ", list.shift());
-console.log(list.print());
-
-console.log("unshift: 5", list.unshift(5));
-console.log("unshift: 5", list.unshift(12));
-console.log("unshift: 8", list.unshift(8));
-console.log(list.print());
-console.log("Get index 1: ", list.get(1));
-console.log("Set index 1 to 11: ", list.set(11, 1));
-console.log("Set index 5 to 23: ", list.set(23, 5));
-console.log(list.print());
-
-console.log("insert 37 to index 2: ", list.insert(37, 2));
-console.log(list.print());
-console.log("insert 4 to index 5: ", list.insert(4, 5));
-console.log(list.print());
-
-console.log("remove index 4: ", list.remove(4));
-console.log(list.print());
-console.log("remove index 3: ", list.remove(3));
-console.log(list.print());
-console.log("remove index 2: ", list.remove(2));
-console.log(list.print());
-console.log("remove index 4: ", list.remove(4));
-console.log(list.print());
-console.log("remove index 1: ", list.remove(1));
-console.log(list.print());
-console.log("remove index 0: ", list.remove(0));
-console.log(list.print());
-console.log("remove index 0: ", list.remove(0));
-console.log(list.print());  // empty
-
-list.push(37);
-list.push(27);
-list.push(32);
-list.push(71);
 list.print();
-// Reversing list
-list = list.reverse();
+
+list = list.rotate(2);
+list = list.rotate(-1);
 list.print();
+
+// console.log("pop: ", list.pop());
+// console.log(list.print());
+
+// console.log("shift: ", list.shift());
+// console.log("shift: ", list.shift());
+// console.log(list.print());
+
+// console.log("unshift: 5", list.unshift(5));
+// console.log("unshift: 5", list.unshift(12));
+// console.log("unshift: 8", list.unshift(8));
+// console.log(list.print());
+// console.log("Get index 1: ", list.get(1));
+// console.log("Set index 1 to 11: ", list.set(11, 1));
+// console.log("Set index 5 to 23: ", list.set(23, 5));
+// console.log(list.print());
+
+// console.log("insert 37 to index 2: ", list.insert(37, 2));
+// console.log(list.print());
+// console.log("insert 4 to index 5: ", list.insert(4, 5));
+// console.log(list.print());
+
+// console.log("remove index 4: ", list.remove(4));
+// console.log(list.print());
+// console.log("remove index 3: ", list.remove(3));
+// console.log(list.print());
+// console.log("remove index 2: ", list.remove(2));
+// console.log(list.print());
+// console.log("remove index 4: ", list.remove(4));
+// console.log(list.print());
+// console.log("remove index 1: ", list.remove(1));
+// console.log(list.print());
+// console.log("remove index 0: ", list.remove(0));
+// console.log(list.print());
+// console.log("remove index 0: ", list.remove(0));
+// console.log(list.print());  // empty
+
+// list.push(37);
+// list.push(27);
+// list.push(32);
+// list.push(71);
+// list.print();
+// // Reversing list
+// list = list.reverse();
+// list.print();
