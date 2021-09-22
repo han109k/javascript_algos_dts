@@ -4,19 +4,18 @@
  * Otherwise it returns false.
  */
 
-const isOdd = val => val % 2 !== 0;
+const isOdd = (val) => val % 2 !== 0;
 
 function someRecursive(arr, callback) {
-  if(arr.length === 0) return false;
+  if (arr.length === 0) return false;
 
   let boolean = someRecursive(arr.slice(1), callback);
 
   return callback(arr[0]) || boolean;
-
 }
 
-console.log(someRecursive([1,2,3,4], isOdd)); // true
-console.log(someRecursive([1,2,3,9], isOdd)); // true
-console.log(someRecursive([4,6,8], isOdd)); // false
-console.log(someRecursive([4,6,8], val => val > 10)); // false
-console.log(someRecursive([4,6,8,12], val => val > 10)); // true
+console.log(someRecursive([1, 2, 3, 4], isOdd)); // true
+console.log(someRecursive([1, 2, 3, 9], isOdd)); // true
+console.log(someRecursive([4, 6, 8], isOdd)); // false
+console.log(someRecursive([4, 6, 8], (val) => val > 10)); // false
+console.log(someRecursive([4, 6, 8, 12], (val) => val > 10)); // true

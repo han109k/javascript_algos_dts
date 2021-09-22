@@ -4,9 +4,8 @@
  */
 
 function reverse(str) {
-
-  let rts = '';
-  if(str.length === 0){
+  let rts = "";
+  if (str.length === 0) {
     return rts;
   } else {
     rts += str.slice(-1);
@@ -16,5 +15,5 @@ function reverse(str) {
   return rts;
 }
 
-console.log(reverse("awesome"));  // "emosewa"
-console.log(reverse("hungarian"));  // "nairagnuh"
+console.log(reverse("awesome")); // "emosewa"
+console.log(reverse("hungarian")); // "nairagnuh"
