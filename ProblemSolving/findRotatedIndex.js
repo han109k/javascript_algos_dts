@@ -1,4 +1,5 @@
 /**
+ * Divide & Conquer
  * Write a function called findRotatedIndex
  * which accepts a rotated array of sorted numbers and an integer.
  * The function should return the index of the integer in the array.
