@@ -10,19 +10,15 @@
 // Time complexity O(n)
 // Space complexity O(n)
 function averagePair(arr, target) {
-  // create frequency object
-  const freq = {};
+  // check if target is an integer
+  if ((target * 2 * 10) % 10 > 0) return false;
 
-  for (let num of arr) {
-    freq[num] = (freq[num] || 0) + 1;
-  }
+  target *= 2;
+  let set = new Set(arr);
 
-  const total = target * 2;
-  for (let num in freq) {
-    let pair = total - num;
-    if (pair in freq) {
-      return true;
-    }
+  for (let number of arr) {
+    let num2 = target - number;
+    if (set.has(num2)) return true;
   }
 
   return false;

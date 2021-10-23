@@ -27,7 +27,23 @@ function areThereDuplicates() {
   return false;
 }
 
-function areThereDuplicatesRef() {
+function areThereDuplicatesRef(...args) {
+  if (args.length === 0 || args.length === 1) return true;
+
+  args.sort();
+
+  console.log(args);
+
+  let pivot = args[0];
+  for (let i = 1; i < args.length; i++) {
+    if (pivot === args[i]) return true;
+    pivot = args[i];
+  }
+
+  return false;
+}
+
+function areThereDuplicatesRef2() {
   return new Set(arguments).size !== arguments.length;
 }
 

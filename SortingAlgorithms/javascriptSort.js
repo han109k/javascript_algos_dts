@@ -1,4 +1,5 @@
 /** 
+ * Time Complexity O(n*logn)
  * The built-in sort method accepts an optional *comparator function
  * This tells to JavaScript how to sort
  * The comparator look at pairs of elements (a & b)
